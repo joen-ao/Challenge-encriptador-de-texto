@@ -1,0 +1,15 @@
+.containerHome {
+  display: flex;
+  gap: 148px;
+  align-items: center;
+}
+.containerText {
+  width: 784px;
+  height: 700px;
+  background-color: rgb(205, 211, 216);
+}
+.containerResult {
+  width: 400px;
+  height: 700px;
+  background-color: rgb(205, 211, 216);
+}
