@@ -1,15 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
 .containerHome {
   display: flex;
   gap: 148px;
-  align-items: center;
 }
+
 .containerText {
   width: 784px;
   height: 700px;
   background-color: rgb(205, 211, 216);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 5px;
+  padding: 20px;
 }
+
 .containerResult {
   width: 400px;
   height: 700px;
   background-color: rgb(205, 211, 216);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que el contenido se apile desde la parte superior */
+  padding: 20px;
+  box-sizing: border-box; /* Para incluir el padding dentro del width/height */
+  border-radius: 10px;
+}
+
+.input {
+  width: 100%;
+  height: 50px; /* Ajusta la altura según lo necesites */
+  font-size: 32px;
+  background: none;
+  border: none; /* Quita el borde */
+  outline: none; /* Quita el borde del enfoque del input */
+  padding: 10px; /* Añade padding interno */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+  resize: none; /* Evita que el input sea redimensionable */
+  font-family: "Inconsolata", monospace;
+}
+
+.input::placeholder {
+  color: #888; /* Cambia el color del placeholder para que se vea bien */
+  font-size: 32px; /* Asegura que el tamaño del placeholder sea igual al del texto ingresado */
+}
+
+.containerButton {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  align-items: center;
+  margin-top: 550px;
+}
+
+.buttonEncriptar {
+  font-size: 16px;
+  background-color: rgb(5, 238, 24);
+  width: 95%; /* Ocupa todo el ancho del contenedor padre */
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+}
+.buttonEncriptar:hover {
+  background-color: rgb(43, 156, 52);
+}
+
+.buttonDescencriptar {
+  font-size: 16px;
+  background-color: black;
+  color: rgb(5, 238, 24);
+  width: 95%; /* Ocupa todo el ancho del contenedor padre */
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+}
+
+.buttonDescencriptar:hover {
+  background-color: rgb(43, 42, 42);
+}
+
+.copyButton {
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
+  padding: 12px;
+  background-color: rgb(43, 156, 52);
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-family: "Inconsolata", monospace;
+}
+.noMessageTitle {
+  color: rgb(48, 47, 47);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: auto; /* Ajuste de la posición */
+  font-family: "Inconsolata", monospace;
+}
+.noMessage {
+  font-size: 1rem;
+  color: rgb(48, 47, 47);
+  font-family: "Inconsolata", monospace;
+}
+.result {
+  font-family: "Inconsolata", monospace;
 }

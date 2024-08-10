@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+.navbarContainer {
+  display: flex;
+  width: 100%;
+  background-color: rgb(5, 238, 24);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.homeTitle {
+  font-size: 24px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-left: 300px;
+}
+.aboutTitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}

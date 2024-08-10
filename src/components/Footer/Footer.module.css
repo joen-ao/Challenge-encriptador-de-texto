@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+.footerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(5, 238, 24);
+  text-align: center;
+  margin: 0;
+}
+.footerText {
+  font-size: 15px;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
