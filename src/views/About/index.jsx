@@ -1,11 +1,15 @@
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import styles from './Aboutme.module.css'
+import MatrixRainingCode from '../../components/MatrizRaining/MatrizRainingEfect';
 
 const About = () => {
    return(
     <div className={styles.aboutContainer}>
         <Navbar/>
+        <div className={styles.backgroundContainer}>
+            <MatrixRainingCode className={styles.matrizRaining}></MatrixRainingCode>
+        </div>
         <div className={styles.containerText}>
             <p className={styles.title}>Potencia tus proyectos con un Front-end eficiente y creativo.</p>
             <p className={styles.description}>Eleve tu negocio digital a otro nivel con un Front-end de calidad!

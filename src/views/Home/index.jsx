@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Home.module.css';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import MatrixRainingCode from '../../components/MatrizRaining/MatrizRainingEfect';
 
 const Home = () => {
     const [text, setText] = useState('');
@@ -52,6 +53,9 @@ const Home = () => {
     return (
         <div className={styles.containerHome}>
             <Navbar />
+            <div className={styles.backgroundContainer}>
+            <MatrixRainingCode></MatrixRainingCode>
+            </div>
             <div className={styles.containerText}>
                     <input 
                         className={styles.input} 
@@ -59,6 +63,10 @@ const Home = () => {
                         value={text}
                         onChange={handleChange}
                     />
+                    <p className={styles.aviso}>
+                        <img src='/src/assets/exclamacion.png' className={styles.imgExclamacion} />
+                         Solo letras minusculas y sin acento
+                    </p>
                     <div className={styles.containerButton}>
                         <button onClick={handleEncrypt} className={styles.buttonEncriptar}>Encriptar</button>
                         <button onClick={handleDecrypt} className={styles.buttonDescencriptar}>Desencriptar</button>
@@ -82,6 +90,7 @@ const Home = () => {
                     
                 )}
             </div>
+           
             <Footer />
         </div>
     );

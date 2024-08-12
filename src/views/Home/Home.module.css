@@ -1,9 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700&display=swap");
+
+:root {
+  --color-primario: rgb(5, 238, 24);
+  --color-secundario: black;
+  --color-terciario: rgb(205, 211, 216);
+  --color-hover: rgb(43, 156, 52);
+  --color-secundario-hover: rgb(51, 51, 51);
+
+  --fuente-inconsolata: "Inconsolata", monospace;
+  --fuente-josefin: "Josefin Sans", sans-serif;
+}
 
 * {
   padding: 0;
   margin: 0;
 }
+
 .containerHome {
   display: flex;
   gap: 148px;
@@ -12,114 +24,183 @@
   margin-top: 120px;
 }
 
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Make sure it's behind other content */
+}
+
 .containerText {
   width: 784px;
   height: 700px;
-  background-color: rgb(205, 211, 216);
+  background-color: var(--color-terciario);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   gap: 5px;
   padding: 20px;
-}
-
-.containerResult {
-  width: 400px;
-  height: 700px;
-  background-color: rgb(205, 211, 216);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Asegura que el contenido se apile desde la parte superior */
-  padding: 20px;
-  box-sizing: border-box; /* Para incluir el padding dentro del width/height */
-  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 1px 16px 17px 1px rgba(0, 0, 0, 0.45);
 }
 
 .input {
   width: 100%;
-  height: 50px; /* Ajusta la altura según lo necesites */
-  font-size: 32px;
+  height: 50px;
+  font-size: 2rem;
   background: none;
-  border: none; /* Quita el borde */
-  outline: none; /* Quita el borde del enfoque del input */
-  padding: 10px; /* Añade padding interno */
-  box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
-  resize: none; /* Evita que el input sea redimensionable */
-  font-family: "Inconsolata", monospace;
+  border: none;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+  font-family: var(--fuente-inconsolata);
 }
 
 .input::placeholder {
-  color: #888; /* Cambia el color del placeholder para que se vea bien */
-  font-size: 32px; /* Asegura que el tamaño del placeholder sea igual al del texto ingresado */
+  color: #888;
+  font-size: 2rem;
+}
+
+.aviso {
+  font-family: var(--fuente-inconsolata);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 490px;
+}
+
+.imgExclamacion {
+  width: 2%;
 }
 
 .containerButton {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  width: 100%; /* Ocupa todo el ancho del contenedor */
+  width: 100%;
   align-items: center;
-  margin-top: 550px;
+  margin-top: 10px;
 }
 
 .buttonEncriptar {
-  font-size: 16px;
-  background-color: rgb(5, 238, 24);
-  width: 95%; /* Ocupa todo el ancho del contenedor padre */
+  font-size: 1rem;
+  background-color: var(--color-primario);
+  width: 100%;
   padding: 12px;
   border: none;
   cursor: pointer;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: var(--fuente-inconsolata);
+  border-radius: 10px;
 }
+
 .buttonEncriptar:hover {
-  background-color: rgb(43, 156, 52);
+  background-color: var(--color-hover);
 }
 
 .buttonDescencriptar {
-  font-size: 16px;
-  background-color: black;
-  color: rgb(5, 238, 24);
-  width: 95%; /* Ocupa todo el ancho del contenedor padre */
+  font-size: 1rem;
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  width: 100%;
   padding: 12px;
   border: none;
   cursor: pointer;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: var(--fuente-inconsolata);
+  border-radius: 10px;
 }
 
 .buttonDescencriptar:hover {
-  background-color: rgb(43, 42, 42);
+  background-color: var(--color-secundario-hover);
+}
+
+.containerResult {
+  width: 400px;
+  height: 700px;
+  background-color: var(--color-terciario);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 1px 16px 17px 1px rgba(0, 0, 0, 0.45);
+}
+
+.result {
+  font-family: var(--fuente-inconsolata);
 }
 
 .copyButton {
-  margin-top: auto; /* Empuja el botón hacia la parte inferior */
+  margin-top: auto;
   padding: 12px;
-  background-color: rgb(5, 238, 24);
-  font-size: 16px;
+  background-color: var(--color-primario);
+  font-size: 1rem;
   border: none;
   cursor: pointer;
   text-align: center;
   width: 100%;
-  font-family: "Inconsolata", monospace;
+  font-family: var(--fuente-inconsolata);
+  border-radius: 10px;
 }
+
 .copyButton:hover {
-  background-color: rgb(43, 156, 52);
+  background-color: var(--color-hover);
 }
+
 .noMessageTitle {
   color: rgb(48, 47, 47);
   font-weight: bold;
   font-size: 1.2rem;
   text-align: center;
-  margin-top: auto; /* Ajuste de la posición */
-  font-family: "Inconsolata", monospace;
+  margin-top: auto;
+  font-family: var(--fuente-inconsolata);
 }
+
 .noMessage {
   font-size: 1rem;
   color: rgb(48, 47, 47);
-  font-family: "Inconsolata", monospace;
+  font-family: var(--fuente-inconsolata);
   text-align: center;
 }
-.result {
-  font-family: "Inconsolata", monospace;
+
+@media (max-width: 1200px) {
+  .containerHome {
+    flex-direction: column;
+    padding: 8%;
+    margin-top: 45px;
+    gap: 64px;
+    width: auto;
+  }
+  .containerResult {
+    width: 784px;
+    height: 400px;
+  }
+
+  @media (max-width: 480px) {
+    .containerHome {
+      margin-top: 45px;
+      padding: 12%;
+    }
+    .containerText {
+      width: 343px;
+      height: 491px;
+    }
+
+    .containerResult {
+      width: 327px;
+      height: 186px;
+    }
+    .input::placeholder {
+      font-size: 1.5rem;
+    }
+    .aviso {
+      margin-top: 280px;
+    }
+  }
 }

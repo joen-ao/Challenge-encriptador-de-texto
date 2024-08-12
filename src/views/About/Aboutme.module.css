@@ -1,26 +1,48 @@
 .aboutContainer {
-  padding: 5% 15%;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 82px;
+  position: relative; /* Necesario para que funcione con el background absoluto */
+  padding: 1% 15%;
 }
-.description {
-  font-family: "Inconsolata", monospace;
-  font-size: 1.5rem;
-  color: black;
+
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegura que el fondo esté detrás de otros elementos */
 }
-.title {
-  font-size: 2.25rem;
-  color: black;
-  font-family: "Inconsolata", monospace;
-  font-weight: 600;
+
+.matrizRaining {
+  width: 100%;
+  height: 100%;
 }
+
 .containerText {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  background-color: rgb(205, 211, 216); /* color-terciario */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 2.25rem;
+  color: black; /* color-secundario */
+  font-family: "Inconsolata", monospace; /* fuente-inconsolata */
+  font-weight: 600;
+}
+
+.description {
+  font-family: "Inconsolata", monospace; /* fuente-inconsolata */
+  font-size: 1.5rem;
+  color: black; /* color-secundario */
 }
 
 .containerEnlaces {
@@ -30,33 +52,70 @@
   align-items: center;
   gap: 32px;
 }
+
 .enlacesTitle {
-  font-family: "Inconsolata", monospace;
+  font-family: "Inconsolata", monospace; /* fuente-inconsolata */
   font-weight: bold;
   font-size: 1.5rem;
-  color: black;
+  color: black; /* color-secundario */
 }
+
 .enlacesLink {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  border: 2px solid #22d4fd;
-  width: 50%;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 21.5px 0;
   text-decoration: none;
-  color: rgb(5, 238, 24);
-  font-family: "Inconsolata", monospace;
-}
-.enlacesLink:hover {
-  background-color: rgb(43, 156, 52);
-}
-.imgPresentacion {
+  display: flex;
+  font-size: 1.5rem;
+  background-color: rgb(5, 238, 24); /* color-primario */
+  color: #000000;
   width: 50%;
+  padding: 12px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  font-family: "Inconsolata", monospace; /* fuente-inconsolata */
+  border-radius: 10px;
+  gap: 5px;
 }
+
+.enlacesLink:hover {
+  background-color: rgb(43, 156, 52); /* color-hover */
+}
+
+.imgPresentacion {
+  width: 40%;
+  border-radius: 5px;
+}
+
 .imgButton {
   width: 10%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .aboutContainer {
+    flex-direction: column-reverse;
+    padding: 12%;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .enlacesLink {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .backgroundContainer {
+    background-size: cover; /* Cubre toda el área del contenedor */
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutContainer {
+    width: auto;
+    margin-top: 30px;
+    gap: 15px;
+    padding: 12%;
+  }
 }

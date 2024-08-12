@@ -5,12 +5,13 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(5, 238, 24);
+  background-color: var(--color-primario);
   text-align: center;
   margin: 0;
+  padding: 10px;
 }
 .footerText {
-  font-size: 15px;
-  color: white;
+  font-size: 1rem;
+  color: var(--color-secundario);
   font-family: "Josefin Sans", sans-serif;
 }
