@@ -64,7 +64,7 @@ const Home = () => {
                         onChange={handleChange}
                     />
                     <p className={styles.aviso}>
-                        <img src='/src/assets/exclamacion.png' className={styles.imgExclamacion} />
+                        <img src='https://i.postimg.cc/qR0BgvSJ/exclamacion.png' className={styles.imgExclamacion} border='0' alt='exclamacion'/>
                          Solo letras minusculas y sin acento
                     </p>
                     <div className={styles.containerButton}>

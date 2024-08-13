@@ -19,11 +19,12 @@ const About = () => {
             <div className={styles.containerEnlaces}>
                 <h2 className={styles.enlacesTitle}>Accede a mis redes</h2>
                 <a className={styles.enlacesLink} href="https://github.com/joen-ao/">
-                    <img src='/src/assets/github.png' className={styles.imgButton} />
+                <img src="https://i.postimg.cc/0M0DsWHT/github.png" className={styles.imgButton} alt="github"/>
                             Github
+                            
                 </a>
                 <a className={styles.enlacesLink}  href="https://linkedin.com/in/joen-anaya">
-                    <img src='/src/assets/linkedin.png' className={styles.imgButton} />
+                <img src="https://i.postimg.cc/Twh7VrZC/linkedin.png" className={styles.imgButton} alt="linkedin"/>
                             Linkedin
                 </a>
             </div>
@@ -31,7 +32,7 @@ const About = () => {
         </div>
         
 
-        <img src='/src/assets/fb.jpg' alt='Foto de presentacion' className={styles.imgPresentacion}/>
+       <img src="https://i.postimg.cc/3R6Lnkh7/fb.jpg" className={styles.imgPresentacion} alt="fb"/>
         
         <Footer/>
     </div>
