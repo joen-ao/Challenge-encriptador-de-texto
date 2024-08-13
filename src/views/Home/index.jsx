@@ -40,9 +40,20 @@ const Home = () => {
         setResult(decryptText(text));
     };
 
-    // Manejar el cambio en el input
+    // Manejar el cambio en el input con validación
     const handleChange = (e) => {
-        setText(e.target.value);
+        let inputText = e.target.value;
+
+        // Remover mayúsculas y acentos
+        inputText = inputText
+            .toLowerCase() // Convierte a minúsculas
+            .normalize('NFD') // Normaliza caracteres con acentos
+            .replace(/[\u0300-\u036f]/g, ''); // Elimina los acentos
+
+        // Filtrar caracteres no permitidos (solo letras minúsculas)
+        inputText = inputText.replace(/[^a-z\s]/g, '');
+
+        setText(inputText);
     };
 
     // Copiar el resultado al portapapeles
@@ -54,24 +65,23 @@ const Home = () => {
         <div className={styles.containerHome}>
             <Navbar />
             <div className={styles.backgroundContainer}>
-            <MatrixRainingCode></MatrixRainingCode>
+                <MatrixRainingCode />
             </div>
             <div className={styles.containerText}>
-                    <input 
-                        className={styles.input} 
-                        placeholder="Ingrese el texto aquí"
-                        value={text}
-                        onChange={handleChange}
-                    />
-                    <p className={styles.aviso}>
-                        <img src='https://i.postimg.cc/qR0BgvSJ/exclamacion.png' className={styles.imgExclamacion} border='0' alt='exclamacion'/>
-                         Solo letras minusculas y sin acento
-                    </p>
-                    <div className={styles.containerButton}>
-                        <button onClick={handleEncrypt} className={styles.buttonEncriptar}>Encriptar</button>
-                        <button onClick={handleDecrypt} className={styles.buttonDescencriptar}>Desencriptar</button>
-                    </div>
-                
+                <input 
+                    className={styles.input} 
+                    placeholder="Ingrese el texto aquí"
+                    value={text}
+                    onChange={handleChange}
+                />
+                <p className={styles.aviso}>
+                    <img src='https://i.postimg.cc/qR0BgvSJ/exclamacion.png' className={styles.imgExclamacion} alt='exclamacion'/>
+                    Solo letras minúsculas y sin acento
+                </p>
+                <div className={styles.containerButton}>
+                    <button onClick={handleEncrypt} className={styles.buttonEncriptar}>Encriptar</button>
+                    <button onClick={handleDecrypt} className={styles.buttonDescencriptar}>Desencriptar</button>
+                </div>
             </div>
 
             <div className={styles.containerResult}>
@@ -84,10 +94,9 @@ const Home = () => {
                     </>
                 ) : (
                     <div>
-                        <p className={styles.noMessageTitle}>Ningun mensaje fue encontrado</p>
-                        <p className={styles.noMessage}> ingrese el texto que desea encriptar o desencriptar </p>
+                        <p className={styles.noMessageTitle}>Ningún mensaje fue encontrado</p>
+                        <p className={styles.noMessage}>Ingrese el texto que desea encriptar o desencriptar</p>
                     </div>
-                    
                 )}
             </div>
            
